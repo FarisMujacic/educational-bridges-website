@@ -13,7 +13,7 @@
 ## 🏗️ Tech Stack
 - **Frontend:** HTML, CSS
 - **Styling:** Google Fonts (Poppins), CSS animations, and responsive design.
-- **JavaScript:** Used for form handling (via EmailJS integration).
+- **JavaScript:** Used for form handling.
 
 ## 🚀 Installation & Setup
 1. **Clone the repository:**
