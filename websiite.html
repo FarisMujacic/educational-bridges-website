@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Bridges</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "ejFJYDXdeqEzseZhl",
+      });
+   })();
+</script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background: rgba(44, 62, 80, 0.95);
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.5s ease;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+    background: #2ecc71; /* Svjetlija boja za hover */
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+
+   header h1 {
+    font-size: 6rem; /* Povećan font naslova */
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-weight: 700; /* Veća debljina slova */
+    animation: fadeIn 1.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.6); /* Dodato lagano pozadinsko zatamnjenje */
+}
+
+header p {
+    font-size: 2rem; /* Povećan font teksta */
+    margin-top: 30px;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    animation: fadeIn 2s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.6); /* Dodato lagano pozadinsko zatamnjenje za bolju vidljivost */
+    max-width: 80%;
+}
+
+
+
+header {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh; /* Malo povećana visina headera za bolji prikaz */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    z-index: 1;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.stockcake.com/public/d/c/6/dc641943-ef63-4514-92c4-8ef60b9f6ee5_large/kids-building-robots-stockcake.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    z-index: -1; /* Da bi bio ispod sadržaja */
+}
+
+
+
+
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2c3e50;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            width: 60px;
+            height: 3px;
+            background: #4CAF50;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-content {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+        .about-us {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            justify-content: space-between;
+        }
+
+        .about-us img {
+            max-width: 45%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-us div {
+            max-width: 55%;
+        }
+
+        .about-us h2 {
+            font-size: 2.2rem;
+            color: #34495e;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .about-us p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .about-us a {
+            color: #0073e6;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #0073e6;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .about-us a:hover {
+            background-color: #0073e6;
+            color: white;
+        }
+
+        .offerings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .offering-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        }
+
+        .offering-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .offering-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .offering-info {
+            padding: 25px;
+        }
+
+        .offering-info h3 {
+            font-size: 1.6rem;
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+
+        .offering-info p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 30px;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 12px 30px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            .about-us {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-us img, .about-us div {
+                max-width: 100%;
+            }
+        }
+
+  .contact-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .contact-section h2 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info div {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .contact-info div h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        .contact-info div p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+       
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Početna</a>
+        <a href="#about">O nama</a>
+        <a href="#mission">Šta nudimo</a>
+        <a href="#join">Pridružite se</a>
+        <a href="#contact">Kontaktiraj nas</a>
+    </nav>
+
+    <header id="home" style="background-image: url('https://images.stockcake.com/public/c/d/c/cdc8e76b-c61d-4495-9949-5383cbc3a682_large/busy-study-desk-stockcake.jpg');">
+    <h1>Obrazovni mostovi</h1>
+    <p>Povezujemo obrazovne resurse sa učenicima u povratničkim zajednicama Bosne i Hercegovine.</p>
+</header>
+
+   
+    <section class="container" id="about">
+        <div class="about-us">
+            <div>
+                <h2>O nama</h2>
+                <p>Program &quot;Obrazovni mostovi&quot; je pokrenut sa ciljem da unaprijedi obrazovne prilike za učenike u
+povratničkim zajednicama u BiH, koji se suočavaju s izazovima kao što su nedostatak modernih
+obrazovnih mogućnosti, resursa i podrške. Kroz saradnju sa univerzitetima, nevladinim
+organizacijama, dijasporom, kompanijama i stručnjacima, radimo na povezivanju učenika sa
+trenerima i mentorima, kao i na osiguravanju potrebnih resursa za njihov napredak.<br><br>
+Naš cilj je osnažiti učenike i omogućiti im pristup kvalitetnom modernom obrazovanju iz novih
+tehnologija, IT, AI, robotike, inžinjerstva, prirodnih nauka i matematike (tzv. STEM oblasti).
+
+</p>
+               
+                <a href="#contact">Kontaktiraj nas</a>
+            </div>
+            <img src="https://images.stockcake.com/public/9/a/e/9ae19cb2-e27e-4871-96bb-a1105072b535_large/robot-teaching-kids-stockcake.jpg" alt="Team meeting">
+        </div>
+    </section>
+
+    <section class="container" id="mission">
+        <h2 class="section-title">Šta nudimo</h2>
+        <div class="offerings">
+            <div class="offering-card">
+                <img src="https://images.stockcake.com/public/0/3/4/0346bec9-06ac-4edb-99a4-13f1c9cf11f4_large/students-learning-online-stockcake.jpg" alt="Mentorship programs">
+                <div class="offering-info">
+                    <h3>Online i uživo treninzi:
+</h3>
+                    <p>Organiziramo treninge iz STEM oblasti, i to u online formatu ili uživo u povratničkim zajednicama.
+Treninzi su visokih standarda, ali prilagođeni potrebama učenika i nastavnika, s ciljem pružanja
+znanja i vještina za njihovu uspješnu budućnost.
+
+</p>
+                </div>
+            </div>
+            <div class="offering-card">
+                <img src="https://cdn.b12.io/client_media/JiAwoT4n/32e92816-70f3-11ef-b6b0-0242ac110002-photo-1520607162513-77705c0f0d4a.jpg" alt="Online i uživo kursevi:">
+                <div class="offering-info">
+                    <h3>Mentorstvo za učenike:
+</h3>
+                    <p>Naprednim učenicima pružamo priliku za individualno mentorstvo sa stručnjacima i kompanijama iz
+različitih STEM oblasti kako bi im se pružila podrška i smjernice kroz proces učenja i daljnjeg razvoja.
+
+</p>
+                </div>
+            </div>
+            <div class="offering-card">
+                <img src="https://blog.pearsoninternationalschools.com/wp-content/uploads/2020/01/AL1369212_Original_1800x900-1132x670.jpg" alt="Podrška nastavnicima:
+">
+                <div class="offering-info">
+                    <h3>Podrška nastavnicima:
+</h3>
+                    <p>Pružamo obuke i stručna usavršavanja za nastavnike, sa fokusom na nove metode učenja, upotrebu
+tehnologije u učionici i prilagođavanje nastavnog procesa specifičnostima lokalnih sredina.</p>
+                </div>
+            </div>
+           
+             <div class="offering-card">
+                <img src="https://www.21kschool.com/in/wp-content/uploads/sites/4/2023/09/Pros-and-Cons-of-Using-Education-Technology.png" alt="Teacher training workshops">
+                <div class="offering-info">
+                    <h3>Oprema za škole:</h3>
+                    <p>Osiguravamo tehničku opremu i materijale za škole u povratničkim zajednicama koje nemaju
+adekvatne resurse, kako bi učenici i nastavnici imali pristup modernim tehnologijama i alatima.</p>
+                </div>
+            </div>
+           
+         
+           
+        </div>
+    </section>
+   
+    <section class="container" id="join">
+        <h2 class="section-title">Pridružite se</h2>
+        <div class="offerings">
+            <div class="offering-card">
+                <img src="https://images.stockcake.com/public/c/8/2/c826dcbb-76b2-479d-9817-e6b216d8fe0d_large/students-using-computers-stockcake.jpg" alt="Mentorship programs">
+                <div class="offering-info">
+                    <h3>Za učenike
+</h3>
+                    <p>Ako ste učenik/učenica koji želi napredovati kroz mentorstvo i treninge, prijavite se i postanite dio
+našeg programa.
+
+</p>
+                </div>
+            </div>
+            <div class="offering-card">
+                <img src="https://arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/HVXNYBAX54I6ROUZ6V4MMSGVDU.jpg" alt="Online i uživo kursevi:">
+                <div class="offering-info">
+                    <h3>Mentori i predavači:
+</h3>
+                    <p>Ako želite podijeliti svoje znanje, postanite mentor ili predavač i podržite učenike u povratničkim
+zajednicama.
+</p>
+                </div>
+            </div>
+            <div class="offering-card">
+                <img src="https://images.stockcake.com/public/c/1/0/c1081f6d-e081-42ab-a875-6f398c1f417e_large/educational-classroom-setup-stockcake.jpg" alt="Podrška nastavnicima:
+">
+                <div class="offering-info">
+                    <h3>Škole iz povratničkih sredina
+</h3>
+                    <p>Škole iz povratničkih zajednica mogu postati naši partneri u stvaranju boljih uslova za učenje. Prijavite
+se, objasnite Vaše potrebe i omogućite svojim učenicima pristup modernim treninzima, mentorstvu i
+opremi koja će unaprijediti njihovo obrazovanje.</p>
+                </div>
+            </div>
+           
+             <div class="offering-card">
+                <img src="https://images.stockcake.com/public/f/8/5/f85d41eb-2b95-4e66-84d5-ff42e91c0a11_large/friendly-handshake-met-stockcake.jpg" alt="Teacher training workshops">
+                <div class="offering-info">
+                    <h3>Za donatore i partnere</h3>
+                    <p>Ako želite podržati naš rad, bilo kroz donaciju opreme, finansijska sredstva ili druge resurse, molimo
+vas da nas kontaktirate. Vaša podrška je ključna za uspjeh ovog programa. Zajedno možemo osigurati
+bolju budućnost za mlade iz povratničkih zajednica.</p>
+                </div>
+            </div>
+           
+         
+           
+        </div>
+    </section>
+
+<section class="contact-section" id="contact">
+        <h2>Kontakt Informacije</h2>
+        <div class="contact-info">
+            <div>
+                <h3>Lokacija:</h3>
+                <p>Bosna i Hercegovina</p>
+            </div>
+            <div>
+                <h3>Telefon:</h3>
+                <p>+387 61 123 456</p>
+            </div>
+            <div>
+                <h3>Email:</h3>
+                <p>info@educationalbridges.ba</p>
+            </div>
+            <div>
+                <h3>Instagram:</h3>
+                <p>@educational_bridges</p>
+            </div>
+            <div>
+                <h3>Facebook:</h3>
+                <p>facebook.com/educationalbridges</p>
+            </div>
+        </div>
+    </section>
+
+  
+      
+
+
+
+    <footer>
+        <p>&copy; 2024 Educational Bridges. All rights reserved.</p>
+    
+    </footer>
+
+</body>
+</html>
+
